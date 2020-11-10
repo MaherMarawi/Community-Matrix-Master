@@ -1,0 +1,15 @@
+<%- include('./components/header') %>
+
+<a href="/question">homePage</a>
+<form  method="POST" class="main_form" action=/edit-comment/<%= post._id %>>
+
+    <textarea name=comment placeholder="Comment" ><%= post.comment %></textarea>
+    <% if(error && error.comment) { %>
+        <p class="error"><%= error.comment.properties.message %></p>
+    <% } %>
+
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<%- include('./components/footer.ejs') %>

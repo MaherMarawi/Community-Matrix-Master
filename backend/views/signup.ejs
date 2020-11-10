@@ -1,0 +1,62 @@
+<%- include('./components/header') %>
+
+<a href="/question">homePage</a>
+
+<form action="/signup" id="signup_form">
+  <h2>Sign up</h2>
+  <label for="username">Username</label>
+  <input type="text" name="username"/>
+  <label for="email">Email</label>
+  <input type="text" name="email"/>
+  <div class="email error"></div>
+  <label for="password">Password</label>
+  <input type="password" name="password"/>
+  <div class="password error"></div>
+  <label for="repassword">Repeat password</label>
+  <input type="password" name="repassword"/>
+  <div class="repassword error"></div>
+  <button>Sign up</button>
+</form>
+
+<%- include('./components/footer') %>
+
+<script defer>
+  const form = document.querySelector('form')
+  const emailError = document.querySelector('.email.error')
+  const passwordError = document.querySelector('.password.error')
+  const repasswordError = document.querySelector('.repassword.error')
+  
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    emailError.textContent = ''
+    passwordError.textContent = ''
+    repasswordError.textContent = ''
+    const username = form.username.value
+    const email = form.email.value
+    const password = form.password.value
+    const repassword = form.repassword.value
+    console.log(username, email, password, repassword)
+    try {
+      const res = await fetch (form.action, {
+      method: 'POST',
+      body: JSON.stringify({ username, email, password, repassword }),
+      headers: {'Content-Type': 'application/json'}
+    })
+    const data = await res.json()
+    if (data == 'password does not match') {
+      repasswordError.textContent = 'password does not match'
+    }
+      console.log(data)
+    if (data.errors) {
+      emailError.textContent = data.errors.email
+      passwordError.textContent = data.errors.password
+    }
+    if (data.user) {
+      location.assign('/')
+    }
+    } catch (error) {
+      console.log(error)
+    }
+  })
+</script>
