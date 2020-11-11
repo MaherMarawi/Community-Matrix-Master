@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const { requireAuth } = require('../middlware/authMiddlware')
+// const { requireAuth } = require('../middlware/authMiddlware')
 const commentController = require('../controllers/commentController')
 
-
-router.get('/cancel/:id',requireAuth, commentController.delete_comment)
-router.post('/comment/:id',requireAuth, commentController.newComment)
-router.all('/edit-comment/:id',requireAuth, commentController.edit_comment)
+router.get('/api/AllComments', commentController.GetComments)
+router.post('/api/AddComment/:id', commentController.NewComment)
+router.delete('/api/RemoveComment/:id', commentController.DeleteComment)
+router.put('/api/EditComment/:id', commentController.ChangeComment)
 
 module.exports = router
