@@ -1,15 +1,23 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/questionController')
-const { requireAuth, checkedUser } = require('../middlware/authMiddlware')
+// const { requireAuth, checkedUser } = require('../middlware/authMiddlware')
 
-router.all('*', checkedUser)
-router.get('/', controller.home)
 
-router.get('/question', controller.homepage)
-router.all('/ask',requireAuth, controller.newQuestion)
-router.get('/question/:id', controller.onepage)
-router.get('/remove/:id', controller.delete_question)
-router.all('/question/edit/:id',requireAuth, controller.editpage)
+
+//get
+
+router.get('/api/Getquestions', controller.AllQuestions)
+router.get('/api/Getquestion/:id', controller.OneQuestion)
+
+//post
+router.post('/api/AddQuestion', controller.NewQuestion)
+
+//delete
+router.delete('/api/RemoveQuestion/:id', controller.DeleteQuestion)
+
+//put
+router.put('/api/EditQuestion/:id', controller.ChangeQuestion)
+
 
 module.exports = router

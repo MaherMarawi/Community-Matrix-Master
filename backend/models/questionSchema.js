@@ -5,7 +5,7 @@ const User = require('./userSchema');
 const Schema = mongoose.Schema;
 
 const questionSchema = new Schema({
-    question: {
+    title: {
     type: String,
     required: [true, 'Please enter a question'],
     minlength: 1,

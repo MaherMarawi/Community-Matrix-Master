@@ -8,6 +8,8 @@ const feedRouter = require('./config/questionRouter')
 const userRouter = require('./config/userRouter')
 const commentRouter = require('./config/commentRouter')
 const http = require('http')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 const server = http.createServer(app)
 
 // Connect to DB
@@ -21,6 +23,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
 app.use(cookieParser())
+app.use(bodyParser.json())
+app.use(cors({origin: 'http://localhost:3000'}))
 app.use(feedRouter)
 app.use(userRouter)
 app.use(commentRouter)
