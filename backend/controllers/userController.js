@@ -30,60 +30,48 @@ const handelErrors = (err) => {
         return errors
     }
 }
+const key = process.env.SecretKey
 const createjwt = function (id) {
-    return jwt.sign({ id }, 'secret text of my project', { 
+    return jwt.sign({ id }, `${key}`, { 
         expiresIn: maxAge
      })
 }
-const registerPage = async (req, res) =>  {
-    if (req.method === "GET") {
-        res.render('signup', {title: 'signup'})
-    } else {
+const RegisterPage = async (req, res) =>  {
         if (req.body.password == req.body.repassword) {
             try {
                 const { username, email, password } = req.body
                 const user = await User.create( { username: username, email: email, password: password } )
                 const token = createjwt(user._id)
-                res.cookie('jwt', token, { httponly: true, maxAge: 1000 * maxAge })
-                res.status(200).json({ user })
-                console.log(user)
+                res.status(200).send({message: 'Registerd', accessToken: token, id: user._id})
             } catch (error) {
                 const errors = handelErrors(error)
-                res.status(400).json({ errors })
+                res.status(400).send( errors )
             }
         } else {
-            res.json('password does not match')
+            res.send('password does not match')
         }
-    }
+    
 }
-const logPage = async (req, res) => {
-    if (req.method === 'GET') {
-        res.render('login', {title: 'login'})
-    } else {
+const SignIn = async (req, res) => {
         const { email, password } = req.body
         try {
             const user = await User.login(email, password)
             const token = createjwt(user._id)
-            res.cookie('jwt', token, { httponly: true })
-            res.status(200).json({ user: user._id })
+            res.status(200).send({message: 'Logged In', accessToken: token, id: user._id})
         } catch (error) {
             const errors = handelErrors(error)
-            res.status(400).json({ errors })
+            res.status(400).send( errors )
         }
-    }
+    
 }
-const logout = (req, res) => {
-    res.cookie('jwt', '', { maxAge: 1 })
-    res.redirect('/login')
+const SignOut = (req, res) => {
+    res.send({message: 'Client Loged Out', accessToken:''})
 }
-const chat = (req, res) => {
-    res.render('chat')
-}
+
 module.exports = {
-    registerPage,
-    logPage,
-    logout,
-    chat
+    RegisterPage,
+    SignIn,
+    SignOut
 }
 
 
