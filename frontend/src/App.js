@@ -5,6 +5,8 @@ import AuthPage from './Components/AuthPage/AuthPage'
 import ShowOne from './Components/ShowOne/ShowOne'
 import UpdatePage from './Components/UpdatePage/UpdatePage'
 import Page404 from './Components/Page404/Page404'
+import AddComment from './Components/AddComment/AddComment'
+
 
 import About from "./Components/About/About"
 
@@ -19,6 +21,9 @@ function App() {
       <div className="App">
       <Navbar />
         <Switch>
+
+          <Route exact path='/add-comment' component={AddComment} /> 
+
           <Route exact path='/platform' component={platform} /> 
 
           <Route exact path='/About' component={About} />
