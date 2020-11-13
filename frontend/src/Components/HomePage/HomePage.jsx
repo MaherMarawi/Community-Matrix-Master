@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import Question from './Question'
 const HomePage = () => {
     const [ questions, setQuestions]= React.useState(null)
     React.useEffect(()=> {
@@ -9,17 +10,17 @@ const HomePage = () => {
               .catch(err => {console.log(err)})
     },[])
     return (
-        <div>
+        <>
+        <h1 style={{textAlign:"center", fontSize: "40px"}}>Some Questions</h1>
+        <div className="questions">
                {questions && questions.map(value => {
                    return (
-                       <ul key={value._id}>
-                             <li >{value.title}</li>
-                             <li>{value.description}</li>
-                             <Link to={`/Show/${value._id}`}>See More</Link>
-                       </ul>
+                    <Question key={value._id} value={value} />
+                       
                    )
                })}
         </div>
+        </>
     )
 }
 
