@@ -5,7 +5,7 @@ import AuthPage from './Components/AuthPage/AuthPage'
 import ShowOne from './Components/ShowOne/ShowOne'
 import UpdatePage from './Components/UpdatePage/UpdatePage'
 import Page404 from './Components/Page404/Page404'
-
+import About from "./Components/About/About"
 import platform from './Components/platform/platform'
 
 
@@ -17,7 +17,7 @@ function App() {
         <Switch>
 
           <Route exact path='/platform' component={platform} /> 
-
+          <Route exact path='/About' component={About} />
           <Route exact path='/Show/:id' component={ShowOne} /> 
           <Route exact path='/UpdatePage' component={UpdatePage} />
           <Route exact path='/AuthPage' component={AuthPage} />
