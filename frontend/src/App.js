@@ -5,7 +5,7 @@ import AuthPage from './Components/AuthPage/AuthPage'
 import ShowOne from './Components/ShowOne/ShowOne'
 import UpdatePage from './Components/UpdatePage/UpdatePage'
 import Page404 from './Components/Page404/Page404'
-
+import Contact from "./Components/Contact/Contact"
 import About from "./Components/About/About"
 
 
@@ -20,7 +20,7 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path='/platform' component={platform} /> 
-
+          <Route exact path='/Contact' component={Contact} />
           <Route exact path='/About' component={About} />
 
 
