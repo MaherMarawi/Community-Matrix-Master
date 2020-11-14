@@ -42,10 +42,10 @@ const RegisterPage = async (req, res) =>  {
                 const { username, email, password } = req.body
                 const user = await User.create( { username: username, email: email, password: password } )
                 const token = createjwt(user._id)
-                res.status(200).send({message: 'Registerd', accessToken: token, id: user._id})
+                res.status(200).send({message: 'Registerd', accessToken: token, id: user._id, username: user.username})
             } catch (error) {
                 const errors = handelErrors(error)
-                res.status(400).send( errors )
+                res.status(400).send( {errors} )
             }
         } else {
             res.send('password does not match')
@@ -57,10 +57,10 @@ const SignIn = async (req, res) => {
         try {
             const user = await User.login(email, password)
             const token = createjwt(user._id)
-            res.status(200).send({message: 'Logged In', accessToken: token, id: user._id})
+            res.status(200).send({message: 'Logged In', accessToken: token, id: user._id, username: user.username})
         } catch (error) {
             const errors = handelErrors(error)
-            res.status(400).send( errors )
+            res.status(400).send( {errors} )
         }
     
 }
