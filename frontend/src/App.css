@@ -82,6 +82,9 @@
   color: var(--secondary-color) !important;
 }
 
+/* Home */
+
+
 .backGround {
   background-image: url("img/8.png");
   height: 720px;
@@ -151,6 +154,9 @@ margin-right: 160px;
   padding: 10px;
   width: 110px;
 }
+
+/* About */
+
 
 .backGroundAB {
   background-color: #fdf0ec;
@@ -239,7 +245,7 @@ margin-right: 30px;
   box-shadow: 1px 2px 12px  #f8a68f;
 }
 .logo{
-  height: 20px;
+  height: 22px;
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -275,6 +281,8 @@ margin-right: 30px;
   padding-left: 100px;
   margin-bottom: -230px;
 }
+/* \\\\\ */
+
 
 .questions{
   display: grid;
