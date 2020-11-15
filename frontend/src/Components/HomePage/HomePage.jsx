@@ -12,8 +12,8 @@ const HomePage = () => {
     },[])
     return (
         <>
-        <h1 style={{textAlign:"center", fontSize: "40px"}}>Some Questions</h1>
-        <Link to='/AddQuestions'>Ask New Question</Link>
+        <h1 style={{textAlign:"center", fontSize: "40px"}}> Questions</h1>
+        
         <div className="questions">
         {/* <div> */}
             

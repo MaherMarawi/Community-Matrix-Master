@@ -15,19 +15,21 @@ export default class Navbar extends Component {
             <Menu size="huge" className="h-nav ui top fixed menu" >
                 {/* <Image className="logo8" src={logo} /> */}
                 <div className="logo-container8"><Icon name="exclamation" className="logo-test"></Icon></div>
-                <Link to="/"><Menu.Item icon="home" name="home" active={activeItem === "home"} onClick={this.handleItemClick} /></Link>
+                <Link to="/platform"><Menu.Item icon="home" name="home" active={activeItem === "home"} onClick={this.handleItemClick} /></Link>
                <Link to="/contact"> <Menu.Item icon="comments" name="contact" active={activeItem === "contact"} onClick={this.handleItemClick} /></Link>
                <Link to="/about"><Menu.Item icon="info circle" name="about" active={activeItem === "about"} onClick={this.handleItemClick} /></Link>
+               <Link to='/'><Menu.Item icon="question circle" name="questions" active={activeItem === "questions"} onClick={this.handleItemClick}/></Link>
                 <Menu.Item position="right"><Input className="search8" icon='search' placeholder='Search...' /></Menu.Item>
                 <Menu.Menu >
                     <Menu.Item>
                         <Button primary className="btn8 log-in">Log In</Button>
-                        <Button primary className="btn8">Sign In</Button>
+                        <Button primary className="btn8">Sign Up</Button>
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
             <Menu size="huge" className="v-nav left fixed"  vertical >
-                <Menu.Item icon="plus" name="add question" active={activeItem === "add question"} onClick={this.handleItemClick}/>
+            <Link to='/AddQuestions'><Menu.Item icon="plus" name="add question" active={activeItem === "add question"} onClick={this.handleItemClick}/></Link>
+            
                 <Menu.Item icon="users" name="users" active={activeItem === "users"} onClick={this.handleItemClick}/>
             </Menu>
             </>
