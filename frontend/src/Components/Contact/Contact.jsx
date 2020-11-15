@@ -72,7 +72,7 @@ export default function Contact(props) {
             )}
 
             <textarea
-            className="btntCO"
+              className="btntCO"
               type="text"
               name="message"
               ref={register({ required: true })}
