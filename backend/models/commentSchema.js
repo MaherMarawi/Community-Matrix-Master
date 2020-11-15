@@ -23,6 +23,9 @@ const commentSchema = new Schema({
         type: Schema.Types.String,
         ref: User
     },
+    userCode: {
+        type: String
+    }
 }, { timestamps: true })
 const Comment = mongoose.model('Comment', commentSchema)
 
