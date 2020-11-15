@@ -37,6 +37,7 @@ const createjwt = function (id) {
      })
 }
 const RegisterPage = async (req, res) =>  {
+    
         if (req.body.password == req.body.repassword) {
             try {
                 const { username, email, password } = req.body
