@@ -39,17 +39,20 @@ const createjwt = function (id) {
 const RegisterPage = async (req, res) =>  {
     
         if (req.body.password == req.body.repassword) {
-            try {
-                const { username, email, password } = req.body
-                const user = await User.create( { username: username, email: email, password: password } )
-                const token = createjwt(user._id)
-                res.status(200).send({message: 'Registerd', accessToken: token, id: user._id, username: user.username})
-            } catch (error) {
-                const errors = handelErrors(error)
-                res.status(400).send( {errors} )
-            }
+            const { username, email, password } = req.body
+            const user = new User({ username, email, password })
+            user.save()
+                .then(user => {
+                    console.log(user)
+                    const token = createjwt(user._id)
+                    res.status(200).send({message: 'Registerd', accessToken: token, id: user._id, username: user.username})})
+                .catch( (err) => {
+                    const errors = handelErrors(err)
+                 res.status(404).send( { errors } )
+                })
         } else {
-            res.send('password does not match')
+            const errors = { email: '', password: 'Password does not match' }
+            res.status(404).send( { errors } )
         }
     
 }
@@ -61,7 +64,7 @@ const SignIn = async (req, res) => {
             res.status(200).send({message: 'Logged In', accessToken: token, id: user._id, username: user.username})
         } catch (error) {
             const errors = handelErrors(error)
-            res.status(400).send( {errors} )
+            res.status(404).send( {errors} )
         }
     
 }
