@@ -8,7 +8,7 @@ import Page404 from './Components/Page404/Page404'
 
 import Contact from "./Components/Contact/Contact"
 
-import AddComment from './Components/AddComment/AddComment'
+import AddComment from './Components/Comments/AddComment'
 
 
 

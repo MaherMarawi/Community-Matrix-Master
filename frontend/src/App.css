@@ -380,3 +380,33 @@
 .input8 {
   border-radius: 10px !important;
 }
+/*========================================================================*/
+.userCode{
+  width: 70%;
+  text-align: left;
+  margin-left: 10%;
+  max-height: 400px;
+  overflow: scroll;
+  margin-bottom: 10%;
+  border: 1px solid #fed2c6;
+}
+.userCode-question{
+  width: 80%;
+  text-align: left;
+  margin-left: 10%;
+  max-height: 400px;
+  overflow: scroll;
+}
+/*========================================================================*/
+.delIcon{
+  width: 30px;
+  height: 50px;
+}
+/*========================================================================*/
+.comments{
+  display:grid;
+  grid-template-columns:auto auto ;
+  margin-bottom: 10%;
+  border: 1px dashed #fed2c6;
+}
+/*========================================================================*/
