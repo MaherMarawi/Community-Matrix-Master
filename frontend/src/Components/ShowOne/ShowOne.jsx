@@ -5,7 +5,7 @@ import AddComment from '../AddComment/AddComment'
 
 
 const ShowOne = (props) => {
-    const [ showOneQuestion, setShowOneQuestion] = React.useState(null)
+    const [ showOneQuestion, setShowOneQuestion] = React.useState("")
     React.useEffect(()=> {
         const id = props.match.params.id
         axios.get(`http://localhost:5000/api/GetQuestion/${id}`)

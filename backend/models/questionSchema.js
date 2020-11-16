@@ -21,6 +21,10 @@ const questionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: User
     },
+    user_name: {
+        type: Schema.Types.String,
+        ref: User
+    },
     userCode: {
         type: String
     },
