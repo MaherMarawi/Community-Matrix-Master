@@ -6,5 +6,5 @@ const controller = require('../controllers/userController')
 router.post('/api/SignUp', controller.RegisterPage)
 router.post('/api/Login', controller.SignIn)
 router.get('/api/Logout', controller.SignOut)
-
+router.get('/api/getUsers', controller.Users)
 module.exports = router

@@ -1,0 +1,68 @@
+/*Contact*/
+
+.backgroundCO {
+    background-color: #fdf0ec;
+    padding-top: 10px;
+    margin: -8px;
+    height: 850px;
+  }
+  .bodyCO {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .imgCO {
+    margin: 50px;
+  }
+  .textCO {
+    margin-right: 250px;
+    margin-top: 80px;
+    width: 500px;
+    text-align: center;
+    background-color: #fed2c6;
+    border-radius: 25px 25px 25px 25px;
+    padding-top: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    box-shadow: 1px 2px 12px #f8a68f;
+  }
+  
+  
+  
+  .logo {
+    height: 20px;
+  
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+  .btnCO {
+    height: 20px;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 15px;
+    border: 1px solid rgb(216, 216, 216);
+  }
+  .btntCO {
+    height: 100px;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 15px;
+    border: 1px solid rgb(216, 216, 216);
+  }
+  .sendCO {
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #e76f51;
+    border: 1px solid rgb(216, 216, 216);
+  }
+  .textttCO {
+    padding-left: 100px;
+    margin-bottom: -230px;
+  }
+.inputCO{
+    color: red;
+  }

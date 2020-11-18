@@ -1,0 +1,70 @@
+.h-nav {
+    margin: 0 !important;
+    height: 60px;
+    box-shadow: 0 0 5px var(--secondary-color) !important;
+    z-index: 1000 !important;
+    /* position: sticky; */
+  }
+  .v-nav {
+    width: 200px !important;
+    margin: 0;
+    padding: 10px;
+    top: 60px !important;
+    box-shadow: 0 0 5px var(--secondary-color) !important;
+    /* z-index: 9; */
+  }
+  
+  .logo8 {
+    width: 60px;
+    padding: 5px;
+    margin: 0 70px;
+    object-fit: cover;
+  }
+  .logo-container8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 72.5px;
+  }
+  .logo-test {
+    background: var(--secondary-color);
+    border-radius: 50%;
+    padding: 25px;
+    position: relative;
+    color: white;
+    z-index: -1;
+    transform-style: preserve-3d;
+  }
+  .logo-test::before {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 30px;
+  }
+  .ui.menu .item:before {
+    width: 0 !important;
+  }
+  .search8 {
+    margin-left: 146px;
+    width: 290px !important;
+  }
+  .search8 > input {
+    border: 1px solid var(--secondary-color) !important;
+  }
+  .search8 > i {
+    color: var(--secondary-color);
+  }
+  .log-in {
+    margin-right: 20px !important;
+  }
+  .btn8 {
+    background: var(--secondary-color) !important;
+    border-radius: 30px !important;
+    color: white !important;
+  }
+  .ui.menu .active.item {
+    color: var(--secondary-color) !important;
+  }
+  
