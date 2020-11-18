@@ -17,6 +17,7 @@ const GetComments = (req, res) => {
 const NewComment = (req, res) => {
     const comment = new Comment(req.body)
     comment.question_id = req.params.id
+    console.log(comment)
     comment.save()
         .then((comment) => {
             res.status(200).send(comment)

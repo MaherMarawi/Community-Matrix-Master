@@ -1,0 +1,55 @@
+
+/* About */
+
+
+.backGroundAB {
+    background-color: #fdf0ec;
+  }
+  /* *{
+    border: 1px solid red;
+  } */
+  .medalAB {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 120px;
+  }
+  .imgAB {
+    height: 350px;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  .textAB {
+    width: 500px;
+    margin-left: 45px;
+  }
+  .text2AB {
+    margin-top: 200px;
+  }
+  .text3AB {
+    margin-bottom: 300px;
+  }
+  .img1AB {
+    height: 260px;
+    margin-bottom: 100px;
+  }
+  .medal2AB {
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-left: 200px;
+  }
+  .txtAB {
+    margin-bottom: 300px;
+    margin-right: 30px;
+  }
+  .img2AB {
+    height: 400px;
+    margin-bottom: 100px;
+  }
+  .txt1AB {
+    margin-right: 30px;
+  }
+  .img22AB {
+    height: 400px;
+    margin-bottom: 100px;
+    margin-top: 350px;
+  }

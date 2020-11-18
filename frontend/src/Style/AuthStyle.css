@@ -1,0 +1,95 @@
+/* Auth Pages */
+.auth{
+    width: 80%;
+    height: 690px;
+    margin: 5% 30% 5% 10%;
+    display: flex;
+    padding: 0px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 20px rgb(216, 216, 216);
+  }
+  .imgAuth{
+    width: 75%;
+    height: 100%;
+    /* background-image: url('./10.png'); */
+    margin: 0px;
+    box-sizing: border-box;
+    transition:1.5s;
+  }
+  .imgAuth h1{
+    margin-top: -300px;
+    margin-left: 100px;
+    font-weight: 800;
+    font-size: 40px;
+  }
+  .imgAuth p{
+    margin-left: 100px;
+    width: 400px;
+  }
+  .imgAuth button{
+    margin-left: 100px;
+    width: 190px;
+    margin-top: 50px;
+    height: 50px;
+    background-color: #E76F51;
+    color: aliceblue;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+  }
+  .imgAuth img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .infoAuth{
+    width: 25%;
+    height: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+    transition:0.3s;
+  }
+  .infoAuth img{
+    margin: 30% 25% 25% 35%;;
+  }
+  .infoAuth h3{
+    margin: -60px 30%;
+    margin-bottom: 5%;
+  }
+  .infoAuth input{
+    margin-left: 10%;
+    width: 75%;
+    margin-top: 5%;
+    height: 50px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 25px 25px 25px 25px;
+    padding-left: 5%;
+    transition:0.3s;
+  }
+  .ch {
+    transition:0.3s;
+  }
+  .sign-btn{
+    margin-left: 10%;
+    width: 82%;
+    margin-top: 5%;
+    height: 50px;
+    background-color: #E76F51;
+    color: aliceblue;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    margin-bottom: 5%;
+  }
+  .switch{
+    border: none;
+    background-color: aliceblue;
+  }
+  .infoAuth label{
+    margin-left: 15%;
+    margin-top: 50%;
+    margin-bottom: 20%;
+  }
+  .error {
+    color: crimson;
+    margin: 1px;
+    margin-left: 25%;
+  }

@@ -2,15 +2,18 @@ import { useForm } from 'react-hook-form'
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const AddComment = ({ id, comments, setComments, loading, setLoading }) => {
+const AddComment = ({ id, comments, setComments, loading, setLoading, user }) => {
+    
     const { register, handleSubmit, errors } = useForm();
 
-    const onClick = (data) => {
+    const onClick = (data, e) => {
         setLoading(true)
+        console.log(user)
+        data.user_id = user?.id
+        data.user_name = user?.username
         console.log(data)
         axios.post(`http://localhost:5000/api/AddComment/${id}`, data)
-            .then(result => {
-                console.log(result.data)
+            .then(result => {console.log(result.data)
                 const newComments = [...comments, result.data]
                 setComments(newComments)
                 setLoading(false)
@@ -18,6 +21,7 @@ const AddComment = ({ id, comments, setComments, loading, setLoading }) => {
             .catch(err => {
                 setLoading(false)
                 console.log(err) })
+        e.target.reset()
     }
     return (
         <div>

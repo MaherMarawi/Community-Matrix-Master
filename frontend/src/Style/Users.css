@@ -1,0 +1,21 @@
+.btnUS{
+    margin-left: 40px;
+    height: 110px;
+    width: 410px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 7px;
+    padding-left: 25px;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: white ;
+    margin: 10px;
+    box-shadow: 1px 2px 12px #F8A68F;
+    height: 200px;
+  }
+  .backGroundUS{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    background-color: #FDF0EC;
+    padding-left: 10px;
+  }

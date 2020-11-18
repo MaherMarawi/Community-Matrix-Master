@@ -3,26 +3,23 @@ import axios from "axios";
 import img from "../../img/2.png";
 import img1 from "../../img/11.png";
 import { useForm } from "react-hook-form";
-
 export default function Contact(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, e) => {
     axios
       .post("http://localhost:5000/api/SendEmail", data)
       .then((result) => {
-        console.log(result);
+        console.log(props);
       })
       .catch((err) => {
         console.log(err);
       });
     e.target.reset();
   };
-
   const validate = (value) => {
     if (value.includes("@")) return true;
     return false;
   };
-
   return (
     <div className="backgroundCO">
       <h1 style={{ textAlign: "center", fontSize: "60px" }}>Contact Us</h1>
@@ -53,9 +50,8 @@ export default function Contact(props) {
             />
             <br />
             {errors.name && errors.name.type === "required" && (
-              <span>This is required</span>
+              <div className="inputCO">Name is required</div>
             )}
-
             <input
               className="btnCO"
               type="text"
@@ -65,12 +61,11 @@ export default function Contact(props) {
             />
             <br />
             {errors.email && errors.email.type === "required" && (
-              <span>This is required</span>
+              <div className="inputCO">Email is required</div>
             )}
             {errors.email && errors.email.type === "validate" && (
-              <span>This should be an email</span>
+              <div className="inputCO">Please enter a valid email</div>
             )}
-
             <textarea
               className="btntCO"
               type="text"
@@ -80,9 +75,9 @@ export default function Contact(props) {
             />
             <br />
             {errors.message && errors.message.type === "required" && (
-              <span>This is required</span>
+              <div className="inputCO">Message is required</div>
             )}
-
+            <br />
             <button className="sendCO">Submit</button>
           </form>
         </div>

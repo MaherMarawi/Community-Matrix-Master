@@ -1,0 +1,24 @@
+.addquestion-title8 {
+    text-align: center;
+    padding: 20px;
+    /* color: #fdf0ec; */
+    /* text-shadow: 0 0 10px var(--secondary-color); */
+    font-size: 50px;
+  }
+  .addquestion-container8 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* justify-content: center; */
+    align-items: center;
+    justify-items: center;
+    padding: 63px 50px;
+  }
+  .form8 {
+    width: 60%;
+    background-color: #fed2c6;
+    padding: 40px;
+    border-radius: 30px;
+  }
+  .input8 {
+    border-radius: 10px !important;
+  }

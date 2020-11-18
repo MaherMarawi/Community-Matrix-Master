@@ -71,11 +71,19 @@ const SignIn = async (req, res) => {
 const SignOut = (req, res) => {
     res.send({message: 'Client Loged Out', accessToken:''})
 }
+const Users = (req, res) => {
+    User.find().sort({ createdAt: -1 })
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => res.status(404).send(err))
+}
 
 module.exports = {
     RegisterPage,
     SignIn,
-    SignOut
+    SignOut,
+    Users
 }
 
 
