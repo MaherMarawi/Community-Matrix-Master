@@ -12,6 +12,7 @@ import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import AuthOut from './Components/Auth/AuthFunc/AuthOut'
 import Users from './Components/Users/GetUsers'
+import Profile from './Components/Users/Profile'
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
                   <Route exact path='/users' component={Users} />
                   <Route exact path='/community' component={Questions} />
                   <Route exact path='/add-comment' component={AddComment} /> 
-                  {/* <Route exact path='/UpdatePage' component={UpdatePage} /> */}
+                  <Route exact path='/profile/:id' component={Profile} />
                   <Route exact path='/AddQuestions' component={AddQuestions} />
                   <Route exact path='/Show/:id' component={ShowOne} />
               </div>

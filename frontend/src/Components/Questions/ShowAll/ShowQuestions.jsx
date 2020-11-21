@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Question from './Question'
 import IconLoading from '../../Auth/AuthFunc/IconLoading'
+import { Placeholder } from 'semantic-ui-react'
 const HomePage = () => {
     const [ questions, setQuestions]= React.useState(null)
     const [ loading, setLoading ] = React.useState(true);
@@ -16,7 +17,7 @@ const HomePage = () => {
     },[])
     return (
         <>
-        <h1 style={{textAlign:"center", fontSize: "40px"}}> Questions</h1>
+        <h1 style={{textAlign:"center", fontSize: "40px"}}>Questions</h1>
         
         <div className="questions">
             {!loading ? 

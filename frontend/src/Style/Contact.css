@@ -26,13 +26,27 @@
     box-shadow: 1px 2px 12px #f8a68f;
   }
   
-  
+  .BackbtnCO{
+    height: 40px;
+    width: 140px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #E76F51;
+    border: 1px solid rgb(216, 216, 216);
+    margin-left: 350px;
+   margin-top: 30px;
+   color: white;
+  }
+  .titleCO{
+    font-size: 60px;
+    margin-left: 500px;
+  }
   
   .logo {
-    height: 20px;
+    height: 20px !important;
   
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   
   .btnCO {

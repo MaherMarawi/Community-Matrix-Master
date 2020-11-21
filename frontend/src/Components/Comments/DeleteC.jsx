@@ -13,10 +13,8 @@ function DeleteC({comment, comments, setComments, loading, setLoading }) {
                 setComments(newComments)
                 setLoading(false)
             })
-           
             .catch(err => {setLoading(false)
                 console.log(err)})
-        
     }
     return (
         <div>

@@ -7,7 +7,8 @@ function AuthImg() {
         <div className='imgAuth'>
             <img src={img} alt="img"/>
             <h1>WELCOME TO ASK!</h1>
-            <p>Lorem ipsum doloem ipsum dolor sit amet consectetur adipisicing. Nam illum </p>
+            <p>Community Matrix Master is a programming environment where you can make a simple question. Suggest your question and share it in seconds.
+            </p>
             <Link to='/community' ><button>  Back to Home</button></Link>
         </div>
     )

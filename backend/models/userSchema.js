@@ -14,21 +14,30 @@ const userSchema = new Schema({
         required: false
     },
     email: {
-    type: String,
-    unique: true,
-    lowercase: true,
-    required: [true, 'Please enter an email'],
-    validate: [isEmail, 'Please enter a valid email']
-},
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: [true, 'Please enter an email'],
+        validate: [isEmail, 'Please enter a valid email']
+    },
     password: {
-    type: String,
-    required: [true, 'Please enter a password'],
-    minlength: [6, 'your password is too short']
-},   
+        type: String,
+        required: [true, 'Please enter a password'],
+        minlength: [6, 'your password is too short']
+    },
+    phoneNumber: {
+        type: String
+    },
+    langs: {
+        type: String
+    },
+    accounts: {
+        type: Array
+    }
 
-},{timestamps: true})
+}, { timestamps: true })
 
-userSchema.pre('save', async function (next)  {
+userSchema.pre('save', async function (next) {
     const salt = await bcrypt.genSalt()
     this.password = await bcrypt.hash(this.password, salt)
     if (this.username == '') {
@@ -41,20 +50,20 @@ userSchema.pre('save', async function (next)  {
     next()
 })
 
-userSchema.statics.login =  async function (email, password) {
+userSchema.statics.login = async function (email, password) {
     if (email !== '') {
         const user = await this.findOne({ email })
-    if (user) {
-        const auth = await bcrypt.compare(password, user.password)
-        if (auth) {
-            return user
+        if (user) {
+            const auth = await bcrypt.compare(password, user.password)
+            if (auth) {
+                return user
+            }
+            throw Error('password is incorrect')
         }
-        throw Error('password is incorrect')
-    }
-    throw Error('email is incorrect')
+        throw Error('email is incorrect')
     }
     throw Error('please enter your email')
-    
+
 }
 
 const User = mongoose.model('user', userSchema)

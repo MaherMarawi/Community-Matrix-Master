@@ -1,0 +1,73 @@
+.backGroundPR{
+    background-image: url("../img/8.png");
+    background-color: #fdf0ec;
+    height: 900px;
+    padding-left: 20px;
+}
+.EmailhPR{
+color: #e76f51;
+margin-left: 20px;
+}
+.hrPR{
+    margin-bottom: 30px;
+}
+.inputPR{
+    height: 40px;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 15px;
+    border: 1px solid rgb(216, 216, 216);
+    margin-bottom: 10px;
+}
+.ext{
+    margin-left: 16px;
+}
+.labelPR{
+margin-left: 20px;
+margin-right: 20px;
+font-size: x-large;
+}
+.AccPR{
+    margin-top: -30px;
+}
+.divPR{
+    margin-left: 18px;
+}
+.btnPR{
+    height: 40px;
+    width: 60px;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 10px;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: #e76f51;
+    color: white;
+}
+.btn2PR{
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #e76f51;
+    border: 1px solid rgb(216, 216, 216);
+    color: white;
+    margin-left: 18px;
+}
+.addAcc{
+    margin-left: 18px;
+    font-size: 18px;
+    margin-right: 50px;
+}
+.deletePR{
+ margin-left: 4px;
+}
+.DeletePR{
+    height: 40px;
+    width: 70px;
+    margin-top: 10px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #e76f51;
+    border: 1px solid rgb(216, 216, 216);
+    color: white;
+    margin-left: 50px;
+}
