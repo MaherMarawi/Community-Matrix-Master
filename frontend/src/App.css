@@ -14,6 +14,8 @@
 @import url('./Style/AddQuestion.css');
 @import url('./Style/Questions.css');
 @import url('./Style/Navbar.css');
+@import url('./Style/ShowOne.css');
+@import url('./Style/Profile.css');
 .app {
   /* margin-left: 200px;
     margin-top: 85px !important; */
@@ -25,16 +27,16 @@
 .userCode{
   width: 70%;
   text-align: left;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   max-height: 400px;
   overflow: scroll;
-  margin-bottom: 10%;
+  margin-bottom: 1%;
   border: 1px solid #fed2c6;
 }
 .userCode-question{
   width: 80%;
   text-align: left;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   max-height: 400px;
   overflow: scroll;
 }

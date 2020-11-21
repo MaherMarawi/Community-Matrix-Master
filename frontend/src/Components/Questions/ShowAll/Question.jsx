@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import GetMoment from '../../GetMoment'
 
 const Question = (props) => {
     return (
-        <div className="question-container8" style={{width: '90%', marginLeft: '5%', backgroundColor: 'white', boxShadow: '1px 2px 12px #fff7f5'}} >
+        <div className="question-container8" style={{ backgroundColor: 'white', boxShadow: '1px 2px 12px #fff7f5'}} >
             <div className="card-header8" >
                 <i className="fas fa-user-tie fa-3x icon8" ></i>
                 <div >
@@ -16,12 +17,10 @@ const Question = (props) => {
                     </div>
                 </div>
             </div>
-            <div>{props.value.title}</div>
-            <div className="description8"><p>{props.value.description}</p></div>
+            <div style={{fontSize:"20px" , color:"orange"}}>{props.value.title}</div>
+            <div style={{color:"black"}} className="description8"><p>{props.value.description}</p></div>
             <div className="buttons8">
-                <i className="far fa-comment-alt"> Responses</i>
-                <i className="far fa-bookmark"> Bookmark</i>
-                <i className="far fa-flag"> Report</i>
+                <GetMoment>{props.value && props.value.createdAt}</GetMoment>
             </div>
         </div>
     )

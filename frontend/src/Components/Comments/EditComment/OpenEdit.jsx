@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Button } from 'semantic-ui-react';
 function OpenEdit({ index, setEditComment }) {
     
         
@@ -8,9 +8,7 @@ function OpenEdit({ index, setEditComment }) {
         setEditComment(index)
     }
     return (
-        <button onClick={() => onClick()} >Edit</button>
-
-
+        <Button className="btn8" onClick={() => onClick()} >Edit</Button>
     )
 }
 export default OpenEdit

@@ -23,27 +23,29 @@ export default class Navbar extends Component {
 
                 <Link to="/"><Menu.Item icon="home" name="home" active={activeItem === "home"} onClick={this.handleItemClick} /></Link>
 
+                <Link to="/about"><Menu.Item icon="info circle" name="about" active={activeItem === "about"} onClick={this.handleItemClick} /></Link>
+
                <Link to="/contact"> <Menu.Item icon="comments" name="contact" active={activeItem === "contact"} onClick={this.handleItemClick} /></Link>
 
-               <Link to="/about"><Menu.Item icon="info circle" name="about" active={activeItem === "about"} onClick={this.handleItemClick} /></Link>
+                
 
-               <Link to='/community'><Menu.Item icon="question circle" name="questions" active={activeItem === "questions"} onClick={this.handleItemClick}/></Link>
-
-                <Menu.Item position="right"><Input className="search8" icon='search' placeholder='Search...' /></Menu.Item>
-
-                <Menu.Menu >
+                <Menu.Menu style={{marginLeft:'47%'}} >
                     <Menu.Item>
                         <Link to={this.state.loggedIn ? '/Auth/logout' : '/Auth/LogIn'} ><Button primary className="btn8 log-in">{this.state.loggedIn ? 'Logout' : 'Login'}</Button></Link> 
                         {!this.state.loggedIn ? 
                         <Link to='/Auth/SignUp' ><Button primary className="btn8">Sign Up</Button></Link> 
-                        : `Welcom ${this.state.user?.username}` }
+                        : <label>Welcom <b style={{color: 'orange'}} >{this.state.user?.username}</b></label>  }
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
             <Menu size="huge" className="v-nav left fixed"  vertical >
+            <Link to='/community'><Menu.Item icon="question circle" name="questions" active={activeItem === "questions"} onClick={this.handleItemClick}/></Link>
             <Link to='/AddQuestions'><Menu.Item icon="plus" name="add question" active={activeItem === "add question"} onClick={this.handleItemClick}/></Link>
             
             <Link to='/users'><Menu.Item icon="users" name="users" active={activeItem === "users"} onClick={this.handleItemClick}/></Link>
+            {this.state.user && this.state.user ? 
+            <Link to={`/profile/${this.state.user.id}`}><Menu.Item icon="user" name="profile" active={activeItem === "profile"} onClick={this.handleItemClick}/></Link>
+            : ''}
             </Menu>
             </div>
         );

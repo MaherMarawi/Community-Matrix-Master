@@ -74,16 +74,38 @@ const SignOut = (req, res) => {
 const Users = (req, res) => {
     User.find().sort({ createdAt: -1 })
         .then(result => {
-            res.status(200).send(result)
+            const arr =  []
+            result.forEach(value=>{
+                value.password = ''
+                arr.push(value)
+            })
+            res.status(200).send(arr)
         })
         .catch(err => res.status(404).send(err))
+}
+const oneUser = (req, res) => {
+    User.findById(req.params.id)
+        .then(user => {
+            user.password = ''
+            const newUser = {_id: user._id, email: user.email, username: user.username, langs: user.langs, accounts: user.accounts, phoneNumber: user.phoneNumber}
+            console.log(newUser)
+            res.status(200).send(newUser)
+        })
+        .catch(err => res.status(404).send(err))
+}
+const updateUser = (req, res) => {
+    User.findByIdAndUpdate(req.params.id, req.body)
+        .then(response => {res.status(200).send(response)})
+        .catch(err => console.log(err))
 }
 
 module.exports = {
     RegisterPage,
     SignIn,
     SignOut,
-    Users
+    Users,
+    oneUser,
+    updateUser
 }
 
 

@@ -4,13 +4,16 @@ import GetComment from '../../Comments//GetComments'
 import DeleteQ from './DeleteQ'
 import UserCode from '../../UserCode/UserCode'
 import IconLoading from '../../Auth/AuthFunc/IconLoading'
+import Edit from './Edit'
+import QuesEdit from './QuesEdit'
+import Moment from '../../GetMoment'
 
 const ShowOne = (props) => {
     const [ user, setUser ] = React.useState()
     const [ showOneQuestion, setShowOneQuestion] = React.useState("")
     const [ loading, setLoading ] = React.useState(true)
+    const [ edit, setEdit ] = React.useState(false)
     React.useEffect(()=> {
-        console.log(JSON.parse(sessionStorage?.getItem('User')))
         if (sessionStorage.getItem('User')) {
             const accesUser = JSON.parse(sessionStorage?.getItem('User'))
             setUser(accesUser)
@@ -19,30 +22,39 @@ const ShowOne = (props) => {
         axios.get(`http://localhost:5000/api/GetQuestion/${id}`)
         .then(result => {setLoading(false)
             setShowOneQuestion(result.data)})
-        .catch(err => {setLoading(false)})
-        },[])
+        .catch( err => {setLoading(false)})
+        },[showOneQuestion])
     return (
         <div className="backgroundSO">
             {!loading ? 
             <div>
-            <h4>{showOneQuestion && showOneQuestion.user_name}</h4>
-            <h1>{showOneQuestion && showOneQuestion.title}</h1>
-            <h1>{showOneQuestion && showOneQuestion.description}</h1>
+            {!edit ? 
+                <div className="showone-container8">
+                <div>
+                <Moment>{showOneQuestion && showOneQuestion.createdAt}</Moment>
+                <h3 style={{color:"var(--secondary-color)", }}>{showOneQuestion && showOneQuestion.title}</h3>
+                <h5>{showOneQuestion && showOneQuestion.description}</h5>
             {showOneQuestion.userCode ?  
             <div className='userCode-question'>
                 <UserCode>{showOneQuestion && showOneQuestion.userCode}</UserCode>
             </div>
             : <p></p>}
-            <div>
+                </div>
+                
+            <div className="choices" >
+            <h4>{showOneQuestion && showOneQuestion.user_name}</h4>
                 {user?.id == showOneQuestion.user_id ?
                     <div>
-                        <DeleteQ id={props.match.params.id}/>
-                        <button>Update</button>
+                        <DeleteQ props={props} />
+                        <Edit edit={edit} setEdit={setEdit} />
                     </div> 
-                     : ''}
+                    : ''}
             </div>
-            <div>
-                <GetComment id={props.match.params.id} question_id={showOneQuestion.user_id} />
+                </div>
+                : <QuesEdit question={showOneQuestion} props={props} setLoading={setLoading} setQuestion={setShowOneQuestion} setEdit={setEdit} />}
+            <h2 style={{marginLeft:'5%'}} >Comments:</h2>
+                <div>
+                <GetComment id={props.match.params.id} question_id={showOneQuestion && showOneQuestion.user_id} />
             </div>
             </div>
             : <IconLoading />}

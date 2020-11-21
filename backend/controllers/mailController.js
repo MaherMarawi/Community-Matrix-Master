@@ -14,6 +14,7 @@ const NewEmail = (req, res) => {
       let mailOptions = {
         from: req.body.email,
         to: 'mahermarawi92@gmail.com',
+        to: 'mohammad.bushy@gmail.com',
         subject: 'Portfolio Message',
         html: `<h3>This is a message from Community Matrix Master</h3><p>${req.body.message}</p>
         <h3>${req.body.name}</h3>`
